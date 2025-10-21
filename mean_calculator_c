@@ -1,0 +1,24 @@
+// This is a program that converts the amount of Fahrenheit entered by the user 
+// to another unit (Degrees Celsius)
+#include <stdio.h>
+
+int main()
+{
+    // We create the variables for the two values and their average
+    float AverageOfValues; 
+    float Value1, Value2;
+   
+    printf("Enter the first value: ");
+    // Assign the first value to the variable Value1
+    scanf("%f", &Value1);
+   
+    printf("Enter the second value: ");
+    // Assign the second value to the variable Value2
+    scanf("%f", &Value2);
+   
+    // Calculate the average of the two values entered
+    AverageOfValues = (Value1 + Value2) / 2;
+   
+    printf("The average of the two entered values is: %.2f", AverageOfValues);
+    return 0;
+}
