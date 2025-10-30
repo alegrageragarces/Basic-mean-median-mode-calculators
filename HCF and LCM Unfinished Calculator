@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    int Value1, Value2, i;
+    float LCM = 0,0;
+    float HCF = 0,0;
+    
+    do{
+        printf("Hello, do you want to compute the LCM (input 0) or the HCF (input 1) of two numbers: ")
+        scanf("%d", i, "\n")
+    }while(i != 0 && i != 1);
+    
+    printf("Hello, please give me the first value: ")
+    // Through scanf, we'll attach the first value given by the user to Value1
+    scanf("%d", Value1, "\n")
+    
+     printf("Hello, please give me the second value: ")
+    // Through scanf, we'll attach the first value given by the user to Value1
+    scanf("%d", Value2, "\n")
+    
+    if (i==0){
+        // Computing the Lowest Common Multiple 
+        LCM = 
+    }
+
+    return 0;
+}
