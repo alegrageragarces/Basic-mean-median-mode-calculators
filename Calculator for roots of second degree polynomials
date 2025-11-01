@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    //Inicializamos los coeficientes de las incognitas y el Termino independiente
+    float a = 0.0, b = 0.0, c = 0.0;
+    
+    do{
+        //Pedimos los coeficientes de las dos incognitas de la ecuacion
+        printf("\n Dame los coeficientes de las incognita de 2ndo y 1er grado (separados por un espacio): ");
+        scanf("%f %f", &a, &b);
+
+
+    //Si el coeficiente de la incognita  de segundo grado es 0, no se podremos formar un polinomio de segundo grado
+    } while (a == 0);
+    
+    printf("\n Dame el termino independiente: ");
+    scanf("%f", &c);
+    
+    float discriminante = (b * b) - (4 * a * c);
+    float raiz1, raiz2;
+
+    printf("\n El discriminante es %f \n ", discriminante);
+
+
+    //El discriminante de la ecuacion cuadratica de un polinomio de segundo grado puede tener significados distinitos, dependiendo de su valor
+    // El discriminante tendra dos raices reales
+    if (discriminante > 0.0) {
+        // Los dos casos de la ecuacion cuadratica
+        raiz1 = (-b + sqrt(discriminante) / (2 * a));
+        raiz2 = (-b - sqrt(discriminante) / (2 * a));
+        printf("\n Las raices de la relación son %.2f %.2f", raiz1, raiz2);
+
+
+    //El discriminante tendra una raiz doble ej: (x + 2) (x - 2); 2 - 2 = 0
+    } else if (discriminante == 0) {
+        //La raiz cuadrada de 0 es 0, se omite de la ecuacion
+        raiz1 = (-b / (2 * a));
+        printf("\n Raices dobles de la relación %.2f %.2f", raiz1, (-1) * raiz1);
+
+
+    // Habran 2 raices complejas
+    } else { // El discriminante solo puede ser < 0.0
+        // Al ser raices complejas, se formaran de una mitad de numeros reales y la otra, de numeros imaginarios
+        float Parte_Real = raiz1, Parte_Imaginaria = raiz2;
+        Parte_Real = (-b / (2 * a));
+
+
+        // La raiz cuadrada de un numero negativo es un numero imaginario
+        Parte_Imaginaria = sqrt(discriminante) / (2 * a);
+        printf("\n Las Raices Complejas de la relación son %.2f + %.2fi, %.2f - %.2fi", raiz1, raiz2, raiz1, raiz2);
+    }
+
+    return 0;
+}
