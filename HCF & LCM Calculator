@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    printf("Enter two integers: ");
+    scanf("%d %d", &num1, &num2);   
+
+    int greater, smaller;
+
+    // Knowing the greater and smaller value will simplify Euclid's algorithm later
+    if (num1 > num2) {
+        greater = num1;
+        smaller = num2;
+    } else {
+        greater = num2;
+        smaller = num1;
+    }
+
+    // We use Euclid's algorithm to calculate the GCD
+    int storedValue = 0;  // We will use this variable to store intermediate values
+    int a = greater;
+    int b = smaller; // In the algorithm, b will hold the remainder after each modulo calculation
+
+    // When b == 0, it means that in the previous step a was divisible by b,
+    // therefore the storedValue and a are the GCD
+    while (b != 0) {
+        storedValue = b;        // Store previous value of b
+        b = a % b;              // Calculate remainder (a > b)
+        a = storedValue;        // b changed, so a now becomes the storedValue
+    }
+
+    int gcd = a; // When b = 0, a is the GCD
+
+    // Calculate LCM using the formula: LCM = (a * b) / GCD
+    int lcm = (num1 * num2) / gcd;
+
+    printf("\nThe GCD of %d and %d is: %d\n", num1, num2, gcd);
+    printf("The LCM of %d and %d is: %d\n", num1, num2, lcm);
+
+    return 0;
+}
