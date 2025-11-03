@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int Number1 = 0, Number2 = 0;
+    
+    //In this program we will ask for the values of two numbers independently
+    //Ask for the first number
+    printf("\n Good morning, please give me a positive integer number: ");
+    scanf("%d", &Number1);
+    
+    //Ask for the second number
+    printf("\n Now please give me a second positive integer number, different from the first one, to compare it: ");
+    scanf("%d", &Number2);
+    
+    //Since we asked only for positive numbers, we use a while loop so the code won't run if the user doesn't listen
+    while (Number1 >= 0 && Number2 >= 0) {
+        //Case 1, the first number is greater than the second
+        if (Number1 > Number2) {
+            printf("%d %d", Number1, Number2);
+            break;
+        //Case 2, the second number is greater than the first
+        } else if (Number1 < Number2) {
+            printf("%d %d", Number2, Number1);
+            break;
+        } else { //Case 3 Number1 and Number2 are equal
+            printf("Please avoid entering two equal numbers %d %d ", Number1, Number2);
+            break;
+        }
+    }
+    
+    return 0;
+}
