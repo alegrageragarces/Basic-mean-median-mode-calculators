@@ -1,1 +1,34 @@
 // This program asks the user for an array and then inverts it
+#include <stdio.h>
+
+int main() {
+    unsigned int arrayOriginal[10];
+    unsigned int arrayInvertido[10];
+    unsigned int i, i2;
+
+    // Ask for 10 positive numbers
+    for (i = 0; i < 10; i++) {
+        printf("Enter number %u (positive integers only): ", i + 1);
+        scanf("%u", &arrayOriginal[i]);
+    }
+
+    // Fill arrayInvertido using i2
+    for (i2 = 0; i2 < 10; i2++) {
+        arrayInvertido[i2] = arrayOriginal[9 - i2];
+    }
+
+    // Print original numbers
+    printf("\nNumbers entered:\n");
+    for (i = 0; i < 10; i++) {
+        printf("%u ", arrayOriginal[i]);
+    }
+
+    // Print inverted numbers
+    printf("\n\nNumbers in reverse order:\n");
+    for (i2 = 0; i2 < 10; i2++) {
+        printf("%u ", arrayInvertido[i2]);
+    }
+
+    printf("\n");
+    return 0;
+}
